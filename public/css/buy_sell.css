@@ -1,0 +1,44 @@
+.text-primary {
+    color: #28a745 !important;
+}
+
+
+.choice-bg {
+    background: url('../images/flo.jpg') no-repeat center center/cover;
+    height: 100vh;
+}
+
+
+.choice-container {
+    height: 100vh;
+}
+
+
+.choice-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+
+.btn-success {
+    background-color: #198754;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+}
+
+.btn-outline-success {
+    border-color: #198754;
+    color: #198754;
+}
+
+.btn-outline-success:hover {
+    background-color: #198754;
+    color: #fff;
+}

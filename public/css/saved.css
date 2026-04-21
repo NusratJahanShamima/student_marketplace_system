@@ -1,0 +1,12 @@
+body {
+    background: #f5f5f5;
+}
+
+.card img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.card {
+    border-radius: 12px;
+}

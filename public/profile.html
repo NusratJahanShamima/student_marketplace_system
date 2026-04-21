@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #e3f2fd, #ffffff);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .avatar {
+            font-size: 90px;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .email {
+            color: gray;
+            margin-bottom: 25px;
+        }
+
+        .stat-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .stat-box h5 {
+            margin: 0;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="profile-card">
+
+    
+    <i class="bi bi-person-circle avatar"></i>
+
+    
+    <div class="name" id="name">User Name</div>
+
+    
+    <div class="email" id="email">user@email.com</div>
+
+    
+    <div class="row g-3">
+
+        <div class="col-6">
+            <div class="stat-box">
+                <h5 id="listingCount">0</h5>
+                <small>My Listings</small>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="stat-box">
+                <h5 id="messageCount">0</h5>
+                <small>Messages</small>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <button class="btn btn-success w-100 back-btn" onclick="goBack()">
+        <i class="bi bi-arrow-left"></i> Back to Dashboard
+    </button>
+
+</div>
+
+<script>
+
+const user = JSON.parse(localStorage.getItem('user'));
+
+if (!user) {
+    alert("Login first!");
+    window.location.href = "login.html";
+}
+
+
+
+document.getElementById('name').innerText = user.name;
+document.getElementById('email').innerText = user.email;
+
+
+fetch(`/api/products?user_id=${user.id}`)
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('listingCount').innerText = data.length;
+    });
+
+// load messages
+fetch(`/api/messages/count/${user.id}`)
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('messageCount').innerText = data.total;
+    });
+
+function goBack() {
+    window.location.href = "seller-dashboard.html";
+}
+
+</script>
+
+</body>
+</html>

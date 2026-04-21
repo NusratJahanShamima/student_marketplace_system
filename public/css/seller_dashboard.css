@@ -1,0 +1,90 @@
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+
+.navbar {
+    height: 60px;
+    z-index: 1000;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 60px);
+    background: linear-gradient(180deg, #0d3b66, #081c2c);
+    padding: 15px;
+}
+
+
+.sidebar .nav-link {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background: #198754;
+    color: white;
+    border-radius: 5px;
+}
+
+
+.content-area {
+    margin-left: 220px;
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    background: #f5f7fa;
+}
+
+
+.stat-card {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    background: #e8f5e9;
+    transform: translateY(-5px);
+}
+
+
+.badge-notify {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    font-size: 10px;
+}
+
+
+.listing-item {
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.listing-item:hover {
+    background: #f1fdf5;
+}
+
+.list-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+

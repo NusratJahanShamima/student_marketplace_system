@@ -1,0 +1,45 @@
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    height: 70px;
+    z-index: 1000;
+}
+.add-bg {
+    background: url('../images/flo.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    backdrop-filter: blur(4px);
+}
+
+.add-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px; 
+    padding-bottom: 40px;
+}
+
+.add-card {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.add-card input,
+.add-card select,
+.add-card textarea {
+    border-radius: 8px;
+}
+
+.btn-success {
+    background-color: #198754;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+}
